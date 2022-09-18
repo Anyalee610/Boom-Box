@@ -1,2 +1,2 @@
 # Esca
-Esca is the latin word for food. Esca is wedsite for helping people find food to can cook. By its name and more. 
+People are always looking for new recipes and inspiration for their cooking. Esca in latin in a word for food. Esca is a website that showcases numerous recipes based on the client’es preference.  
