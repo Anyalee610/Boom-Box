@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
+<body id = "body">
 
   <nav>
     <ul>
@@ -17,16 +18,18 @@
     </ul>
   </nav>
 
-  <div>
+  <div id = "top">
     <form id='search'>
-      <input type="text" placeholder="Search..">
-      <button type="button" id='button'>Submit</button>
+      <input type="text"  placeholder="Search..">
+      <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary" type="button" id='button'>Submit</button>
+      </div>
     </form>
 
     <img id="foodpic">
 
     <dl id='ingredient'>
-      <dt>Ingredients</dt>
+      <dt id ="ingredient-title"></dt>
     </dl>
 
     <p id="foodInstructions"></p>

@@ -2,4 +2,13 @@ li{
     list-style-type:none
 }
 
+#search{
+  margin-top: 20px ;
+  margin-bottom: 20px;
+}
+
+#body { 
+    background-color: #D4C7B0;
+    text-align: center;
+}
 

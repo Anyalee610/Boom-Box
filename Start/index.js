@@ -4,16 +4,17 @@ const button = document.getElementById('button');
 const foodpic = document.getElementById('foodpic');
 const foodInstructions = document.getElementById('foodInstructions')
 const ingredient = document.getElementById('ingredient')
-
+const ingredientTiltle = document.getElementById('ingredient-title')
 //function for when the button is clicked on 
 const searchForRecipes = () =>{
+
     let name = form.value;
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
     .then(el=> el.json())
     .then(el => {
         foodpic.src = el.meals[0].strMealThumb
         foodInstructions.innerText = el.meals[0].strInstructions
-
+        ingredientTiltle.innerText = "Ingredients"
         //we reset the innerText for ingredients
         ingredient.innerText = "";
          
