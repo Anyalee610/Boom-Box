@@ -6,10 +6,11 @@ Product Manager/Developer: Anaya Lambright
 Developer: Farouk Katakpaou  
 Developer: Delvin Reyes  
 
-Tech Stack:
+Tech Stack:  
 Frontend: HTML, CSS, Javascript
 
-Unit 6: Skills:  
+
+Skills:  
 API  
 fetchAPI  
 POST/GET  
