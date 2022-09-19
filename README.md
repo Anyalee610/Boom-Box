@@ -9,10 +9,10 @@ Developer: Delvin Reyes
 Tech Stack:
 Frontend: HTML, CSS, Javascript
 
-Unit 6: Skills:
-API
-fetchAPI
-POST/GET
-Promises
-webAPI
+Unit 6: Skills:  
+API  
+fetchAPI  
+POST/GET  
+Promises  
+webAPI  
 
