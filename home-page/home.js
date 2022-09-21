@@ -5,8 +5,11 @@ const foodpic = document.getElementById('foodpic');
 const foodInstructions = document.getElementById('foodInstructions')
 const ingredient = document.getElementById('ingredient')
 const ingredientTiltle = document.getElementById('ingredient-title')
+const oneRecipe = document.getElementById('one-recipe')
 //function for when the button is clicked on 
-const searchForRecipes = (event) =>{
+
+
+ const searchForRecipes = (event) =>{
     event.preventDefault()
 
     let name = form.value;
