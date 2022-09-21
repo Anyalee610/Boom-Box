@@ -1,0 +1,32 @@
+#countries{
+    display: flex;
+    gap: 100px 50px;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 70vw;
+    height: 70vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.pic-country{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width:80px;
+    height:80px;
+}
+
+img{
+   pointer-events: none; 
+}
+#nav {
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.countriesfood{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}

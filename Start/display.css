@@ -1,0 +1,40 @@
+#recipes {
+    margin: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#foodpic {
+   width: 50%;
+    /* height: 730px; */
+    margin: 20px;
+    border-radius: 60px;
+    
+}
+
+#ingredient {
+
+   
+}
+
+
+
+
+
+#display-item{
+    
+    display: flex;
+    
+}
+.half-item{
+    flex-grow: 1;
+}
+#inner-display{
+  float:left;
+}
+#foodInstructions{
+    
+ 
+}
