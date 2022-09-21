@@ -19,7 +19,7 @@ const searchForRecipes = () =>{
         ingredient.innerText = "";
          
         //loop to set the foodingredients with the ingredients we fetched
-        for(let i = 1; i< 30; i++){
+        for(let i = 1; i< 21; i++){
             if(el.meals[0][`strIngredient${i}`]){
                 const foodingredients = document.createElement('dd')
                 foodingredients.innerText = el.meals[0][`strIngredient${i}`]
@@ -35,3 +35,4 @@ const searchForRecipes = () =>{
 }
 
 button.addEventListener('click',searchForRecipes)
+
