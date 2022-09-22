@@ -6,6 +6,10 @@ const foodInstructions = document.getElementById('foodInstructions')
 const ingredient = document.getElementById('ingredient')
 const ingredientTiltle = document.getElementById('ingredient-title')
 const oneRecipe = document.getElementById('one-recipe')
+const mealinfo = document.getElementsByClassName('nav-item meal-type')
+let displayName = document.querySelectorAll('.nav-item.meal-type')
+
+console.log(mealinfo, displayName)
 //function for when the button is clicked on 
 
 

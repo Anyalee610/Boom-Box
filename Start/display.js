@@ -6,10 +6,62 @@ const ingredient = document.getElementById('ingredient')
 const ingredientTiltle = document.getElementById('ingredient-title')
 const itemDisplay = document.getElementById('display-item')
 const innerDisplay = document.getElementById('inner-display')
+const mealinfo = document.getElementsByClassName('meal-type')
+const eachMealType1 = mealinfo[0]
+const eachMealType2 = mealinfo[1]
+const eachMealType3 = mealinfo[2]
+const eachMealType4 = mealinfo[3]
+let displayName;
+eachMealType1.addEventListener('click', function(e){
+        e.preventDefault();
+        recipeDiv.style.display = 'flex';
+        itemDisplay.style.display = 'none';
+        displayName = e.target.textContent
+        recipeDiv.innerHTML = ''
+        display()
+    })
 
+eachMealType2.addEventListener('click', function(e){
+        e.preventDefault();
+        recipeDiv.style.display = 'flex';
+        itemDisplay.style.display = 'none';
+        displayName = e.target.textContent;
+        recipeDiv.innerHTML = '';
+        display()
+})
+eachMealType3.addEventListener('click', function(e){
+        e.preventDefault();
+        recipeDiv.style.display = 'flex';
+        itemDisplay.style.display = 'none';
+        displayName = e.target.textContent
+        recipeDiv.innerHTML = ''
+        display()
+})
+eachMealType4.addEventListener('click', function(e){
+        e.preventDefault();
+        recipeDiv.style.display = 'flex';
+        itemDisplay.style.display = 'none';
+        displayName = e.target.textContent
+        recipeDiv.innerHTML = ''
+        display()
+})
+
+
+
+
+// eachMealType.forEach(el => {
+//     el.addEventListener("click", function(){
+//         displayName = el.textContent
+//         console.log(displayName)
+//     })
+// })
+
+//console.log(displayName)
+//console.log(eachMealType[0].textContent)
 function display(){
+    
     innerDisplay.style.display = 'none';
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert')
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${displayName}`)
     .then(res=> res.json())
     .then(json => json.meals.forEach(meal => {
         let div = document.createElement('div');
@@ -39,6 +91,7 @@ function display(){
 }
 
 recipeDiv.addEventListener('click', (e) => {
+    itemDisplay.style.display = 'flex';
     innerDisplay.style.display = 'block';
     recipeDiv.style.display = 'none';
     let nameId = e.target.id
@@ -52,6 +105,7 @@ recipeDiv.addEventListener('click', (e) => {
         //we reset the innerText for ingredients
         ingredient.innerText = "";
         ingredientTiltle.innerText = "Ingredients"
+        ingredient.appendChild(ingredientTiltle)
         //loop to set the foodingredients with the ingredients we fetched
         for(let i = 1; i< 21; i++){
             if(el.meals[0][`strIngredient${i}`]){
@@ -91,4 +145,4 @@ recipeDiv.addEventListener('click', (e) => {
 //     })
 // } 
 
-display()
+//display()
