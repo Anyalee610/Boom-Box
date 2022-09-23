@@ -5,10 +5,17 @@ const foodpic = document.getElementById('foodpic');
 const foodInstructions = document.getElementById('foodInstructions')
 const ingredient = document.getElementById('ingredient')
 const ingredientTiltle = document.getElementById('ingredient-title')
-//function for when the button is clicked on 
-const searchForRecipes = (event) =>{
-    event.preventDefault()
+const oneRecipe = document.getElementById('one-recipe')
+const mealinfo = document.getElementsByClassName('nav-item meal-type')
+const homesearch = document.getElementById('home-search')
 
+
+//function for when the button is clicked on 
+
+
+ const searchForRecipes = (event) =>{
+    event.preventDefault()
+    homesearch.style.display = 'none'
     let name = form.value;
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
     .then(el=> el.json())

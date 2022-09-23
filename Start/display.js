@@ -6,10 +6,34 @@ const ingredient = document.getElementById('ingredient')
 const ingredientTiltle = document.getElementById('ingredient-title')
 const itemDisplay = document.getElementById('display-item')
 const innerDisplay = document.getElementById('inner-display')
+const mealinfo = document.getElementsByClassName('meal-type')
+const eachMealType1 = mealinfo[0]
+const eachMealType2 = mealinfo[1]
+const eachMealType3 = mealinfo[2]
+const eachMealType4 = mealinfo[3]
+let mealName = window.location.hash.slice(1)
 
-function display(){
+
+const mealClickHandler = (e) => {
+    e.preventDefault();
+    recipeDiv.style.display = 'flex';
+    itemDisplay.style.display = 'none';
+    recipeDiv.innerHTML = '';
+    display(e.target.textContent);
+
+}
+eachMealType1.addEventListener('click',mealClickHandler )
+eachMealType2.addEventListener('click', mealClickHandler)
+eachMealType3.addEventListener('click', mealClickHandler)
+eachMealType4.addEventListener('click', mealClickHandler)
+
+
+
+
+
+function display(displayName){
     innerDisplay.style.display = 'none';
-    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert')
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${displayName}`)
     .then(res=> res.json())
     .then(json => json.meals.forEach(meal => {
         let div = document.createElement('div');
@@ -39,6 +63,8 @@ function display(){
 }
 
 recipeDiv.addEventListener('click', (e) => {
+
+    itemDisplay.style.display = 'flex';
     innerDisplay.style.display = 'block';
     recipeDiv.style.display = 'none';
     let nameId = e.target.id
@@ -52,6 +78,9 @@ recipeDiv.addEventListener('click', (e) => {
         //we reset the innerText for ingredients
         ingredient.innerText = "";
         ingredientTiltle.innerText = "Ingredients"
+
+        ingredient.appendChild(ingredientTiltle)
+
         //loop to set the foodingredients with the ingredients we fetched
         for(let i = 1; i< 21; i++){
             if(el.meals[0][`strIngredient${i}`]){
@@ -66,29 +95,9 @@ recipeDiv.addEventListener('click', (e) => {
 
 })
 
-// const searchForRecipes = (e) =>{
-//     recipeDiv.style.display = 'none';
-//     let nameId = e.target.id 
-//     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${nameId}`)
-//     .then(el=> el.json())
-//     .then(el => {
-//         foodpic.src = el.meals[0].strMealThumb
-//         foodInstructions.innerText = el.meals[0].strInstructions
-      
-//         //we reset the innerText for ingredients
-//         ingredient.innerText = "";
-//         ingredientTiltle.innerText = "Ingredients"
-//         //loop to set the foodingredients with the ingredients we fetched
-//         for(let i = 1; i< 21; i++){
-//             if(el.meals[0][`strIngredient${i}`]){
-//                 const foodingredients = document.createElement('dd')
-//                 foodingredients.innerText = el.meals[0][`strIngredient${i}`]
-//                 ingredient.appendChild(foodingredients)
-//             }
-//         }
-       
 
-//     })
-// } 
 
-display()
+
+display(mealName)
+
+

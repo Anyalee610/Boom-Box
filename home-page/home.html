@@ -11,40 +11,50 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/home-page/home.html">ESCA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Browse Country</a>
+          <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Category-page/category-page.html">Browse Country</a>
         </li>
-          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Browse by Letter</a>
+          <li class="nav-item meal-type">
+          <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Start/display.html#Breakfast">Breakfast</a>
         </li>
-          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Breakfast</a>
+        <li class="nav-item meal-type">
+          <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Start/display.html#Starter">Starter</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Starter</a>
+          <li class="nav-item meal-type">
+          <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Start/display.html#Dessert">Dessert</a>
         </li>
-          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Dessert</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Vegan</a>
+          <li class="nav-item meal-type">
+          <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Start/display.html#Vegan">Vegan</a>
         </li>
         
       </ul>
-      <form  class="d-flex">
-        <input id='search' class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button id='button'class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      
     </div>
 </div>
 </nav>
+<div id = 'home-search'>
+  <div class="container">
+    <h2 class="title">
+      <span class="title-word title-word-1">eat</span>
+      <span class="title-word title-word-2">eat</span>
+      <span class="title-word title-word-3">eat</span>
+      <span class="title-word title-word-4">eat</span>
+    </h2>
+  
+<form  id = 'form' class="d-flex">
+  <input id='search' class="form-control me-2" type="search" placeholder="Search For Food Here" aria-label="Search">
+  <button id='button'class="btn btn-outline-success" type="submit">Search</button>
+</form>
+</div>
+</div>
 
+<div id = 'one-recipe'>
   <img id="foodpic">
 
   <dl id='ingredient'>
@@ -52,8 +62,9 @@
   </dl>
 
   <p id="foodInstructions"></p>
-
+</div>
   <script src="home.js"></script>
+  <script src="display.js"></script>
 </body>
 
 </html>
