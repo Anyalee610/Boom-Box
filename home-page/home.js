@@ -15,7 +15,6 @@ const recipeDiv = document.getElementById('recipes')
 
  const searchForRecipes = (event) =>{
     event.preventDefault()
-    homesearch.style.display = 'none'
     let name = form.value;
     if (name.length === 1){
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${name}`)
@@ -40,6 +39,7 @@ const recipeDiv = document.getElementById('recipes')
             img.setAttribute('id',`${mealId}`)
             p.setAttribute('id',`${mealId}`)
             p.innerText = mealName
+            
             recipeDiv.append(div)
         
     }))

@@ -12,13 +12,16 @@ const itemDisplay = document.getElementById('display-item')
 const innerDisplay = document.getElementById('inner-display')
 const recipeDiv = document.getElementById('countries')
 countries.style.display='flex'
+itemDisplay.style.display= 'none'
 //function for when the button is clicked on 
 const searchForRecipes = (event) =>{
     event.preventDefault()
     countries.style.display ='none'
-    countriesfood.innerHTML=''
+    countriesfood.innerHTML= ''
     let name = form.value;
     if (name.length === 1){
+        itemDisplay.innerHTML=''
+        itemDisplay.style.display = "flex";
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${name}`)
         .then(res=> res.json())
         .then(json => json.meals.forEach(meal => {
@@ -42,6 +45,7 @@ const searchForRecipes = (event) =>{
             p.setAttribute('id',`${mealId}`)
             p.innerText = mealName
             countriesfood.append(div)
+            button.addEventListener('click',searchForRecipes)
         
     }))
         
@@ -68,10 +72,11 @@ const searchForRecipes = (event) =>{
             
 
         })
+        button.addEventListener('click',searchForRecipes)
     
 }
 }
-button.addEventListener('click',searchForRecipes)
+
 
 const countriesClickHandler = (event) => {
     let countryName = event.target.textContent.trim();
@@ -190,7 +195,8 @@ for (let i = 0; i < arrayOfFlags.length; i++){
 }
 insertFlags(data)
 
-
+button.addEventListener('click',searchForRecipes)
 countries.addEventListener('click',countriesClickHandler)
+
 
 
