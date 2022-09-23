@@ -87,3 +87,10 @@ nav{
     
     width:100vw;
 }
+#recipes {
+  margin: 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

@@ -8,7 +8,7 @@ const ingredientTiltle = document.getElementById('ingredient-title')
 const oneRecipe = document.getElementById('one-recipe')
 const mealinfo = document.getElementsByClassName('nav-item meal-type')
 const homesearch = document.getElementById('home-search')
-
+const recipeDiv = document.getElementById('recipes')
 
 //function for when the button is clicked on 
 
@@ -17,31 +17,57 @@ const homesearch = document.getElementById('home-search')
     event.preventDefault()
     homesearch.style.display = 'none'
     let name = form.value;
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
-    .then(el=> el.json())
-    .then(el => {
-        console.log(name)
-        foodpic.src = el.meals[0].strMealThumb
-        foodInstructions.innerText = el.meals[0].strInstructions
-        ingredientTiltle.innerText = "Ingredients"
-       
-        //we reset the innerText for ingredients
-        ingredient.innerText = "";
-         
-        //loop to set the foodingredients with the ingredients we fetched
-        for(let i = 1; i< 30; i++){
-            if(el.meals[0][`strIngredient${i}`]){
-                const foodingredients = document.createElement('dd')
-                foodingredients.innerText = el.meals[0][`strIngredient${i}`]
-                ingredient.appendChild(foodingredients)
-            }
-        }
-       
-
-    })
+    if (name.length === 1){
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${name}`)
+        .then(res=> res.json())
+        .then(json => json.meals.forEach(meal => {
+            let div = document.createElement('div');
+            div.setAttribute('class', 'card');
+            div.setAttribute('style','width: 18rem;');
+            let img = document.createElement('img');
+            img.setAttribute('class', 'card-img-top');
+            let innerDiv = document.createElement('div');
+            innerDiv.setAttribute('class','card-body')
+            let p = document.createElement('p');
+            p.setAttribute('class','card-text');
+            innerDiv.append(p);
+            div.append(img,innerDiv)
+            const mealName = meal.strMeal;
+            const mealPic = meal.strMealThumb;
+            const mealId = meal.idMeal;
+            div.setAttribute('id',`${mealId}`)
+            img.setAttribute('src', `${mealPic}`)
+            img.setAttribute('id',`${mealId}`)
+            p.setAttribute('id',`${mealId}`)
+            p.innerText = mealName
+            recipeDiv.append(div)
+        
+    }))
+        
     
+    }else{fetch(`www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+        .then(el=> el.json())
+        .then(el => {
+            console.log(name)
+            foodpic.src = el.meals[0].strMealThumb
+            foodInstructions.innerText = el.meals[0].strInstructions
+            ingredientTiltle.innerText = "Ingredients"
+            
+            //we reset the innerText for ingredients
+            ingredient.innerText = "";
+                
+            //loop to set the foodingredients with the ingredients we fetched
+            for(let i = 1; i< 30; i++){
+                if(el.meals[0][`strIngredient${i}`]){
+                    const foodingredients = document.createElement('dd')
+                    foodingredients.innerText = el.meals[0][`strIngredient${i}`]
+                    ingredient.appendChild(foodingredients)
+                }
+            }
+            
 
-
+        })
+    
 }
-
+}
 button.addEventListener('click',searchForRecipes)
