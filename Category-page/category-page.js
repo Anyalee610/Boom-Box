@@ -8,12 +8,15 @@ const ingredientTiltle = document.getElementById('ingredient-title');
 const countries = document.getElementById('countries');
 const countriesfood = document.getElementById('countriesfood');
 const body = document.querySelector('body')
-
-
+const itemDisplay = document.getElementById('display-item')
+const innerDisplay = document.getElementById('inner-display')
+const recipeDiv = document.getElementById('countries')
+countries.style.display='flex'
 //function for when the button is clicked on 
 const searchForRecipes = (event) =>{
     event.preventDefault()
-
+    countries.style.display='none'
+    countriesfood.style.display='none'
     let name = form.value;
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
     .then(el=> el.json())
@@ -77,7 +80,35 @@ const countriesClickHandler = (event) => {
     
 
 
- 
+countriesfood.addEventListener('click', (e) => {
+    itemDisplay.style.display = 'flex';
+    innerDisplay.style.display = 'block';
+    countriesfood.style.display = 'none';
+    let nameId = e.target.id
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${nameId}`)
+    .then(el=>el.json())
+    .then(el => {
+        // itemDisplay.style.display='inline'
+        foodpic.src = el.meals[0].strMealThumb
+        foodInstructions.innerText = el.meals[0].strInstructions
+      
+        //we reset the innerText for ingredients
+        ingredient.innerText = "";
+        ingredientTiltle.innerText = "Ingredients"
+        ingredient.appendChild(ingredientTiltle)
+        //loop to set the foodingredients with the ingredients we fetched
+        for(let i = 1; i< 21; i++){
+            if(el.meals[0][`strIngredient${i}`]){
+                const foodingredients = document.createElement('dd')
+                foodingredients.innerText = el.meals[0][`strIngredient${i}`]
+                ingredient.appendChild(foodingredients)
+            }
+        }
+       
+
+    })
+
+})
 
 
 

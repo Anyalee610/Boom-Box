@@ -11,55 +11,27 @@ const eachMealType1 = mealinfo[0]
 const eachMealType2 = mealinfo[1]
 const eachMealType3 = mealinfo[2]
 const eachMealType4 = mealinfo[3]
-let displayName;
-eachMealType1.addEventListener('click', function(e){
-        e.preventDefault();
-        recipeDiv.style.display = 'flex';
-        itemDisplay.style.display = 'none';
-        displayName = e.target.textContent
-        recipeDiv.innerHTML = ''
-        display()
-    })
+let mealName = window.location.hash.slice(1)
 
-eachMealType2.addEventListener('click', function(e){
-        e.preventDefault();
-        recipeDiv.style.display = 'flex';
-        itemDisplay.style.display = 'none';
-        displayName = e.target.textContent;
-        recipeDiv.innerHTML = '';
-        display()
-})
-eachMealType3.addEventListener('click', function(e){
-        e.preventDefault();
-        recipeDiv.style.display = 'flex';
-        itemDisplay.style.display = 'none';
-        displayName = e.target.textContent
-        recipeDiv.innerHTML = ''
-        display()
-})
-eachMealType4.addEventListener('click', function(e){
-        e.preventDefault();
-        recipeDiv.style.display = 'flex';
-        itemDisplay.style.display = 'none';
-        displayName = e.target.textContent
-        recipeDiv.innerHTML = ''
-        display()
-})
+
+const mealClickHandler = (e) => {
+    e.preventDefault();
+    recipeDiv.style.display = 'flex';
+    itemDisplay.style.display = 'none';
+    recipeDiv.innerHTML = '';
+    display(e.target.textContent);
+
+}
+eachMealType1.addEventListener('click',mealClickHandler )
+eachMealType2.addEventListener('click', mealClickHandler)
+eachMealType3.addEventListener('click', mealClickHandler)
+eachMealType4.addEventListener('click', mealClickHandler)
 
 
 
 
-// eachMealType.forEach(el => {
-//     el.addEventListener("click", function(){
-//         displayName = el.textContent
-//         console.log(displayName)
-//     })
-// })
 
-//console.log(displayName)
-//console.log(eachMealType[0].textContent)
-function display(){
-    
+function display(displayName){
     innerDisplay.style.display = 'none';
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${displayName}`)
     .then(res=> res.json())
@@ -120,29 +92,6 @@ recipeDiv.addEventListener('click', (e) => {
 
 })
 
-// const searchForRecipes = (e) =>{
-//     recipeDiv.style.display = 'none';
-//     let nameId = e.target.id 
-//     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${nameId}`)
-//     .then(el=> el.json())
-//     .then(el => {
-//         foodpic.src = el.meals[0].strMealThumb
-//         foodInstructions.innerText = el.meals[0].strInstructions
-      
-//         //we reset the innerText for ingredients
-//         ingredient.innerText = "";
-//         ingredientTiltle.innerText = "Ingredients"
-//         //loop to set the foodingredients with the ingredients we fetched
-//         for(let i = 1; i< 21; i++){
-//             if(el.meals[0][`strIngredient${i}`]){
-//                 const foodingredients = document.createElement('dd')
-//                 foodingredients.innerText = el.meals[0][`strIngredient${i}`]
-//                 ingredient.appendChild(foodingredients)
-//             }
-//         }
-       
 
-//     })
-// } 
 
-//display()
+display(mealName)

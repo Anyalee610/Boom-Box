@@ -1,3 +1,4 @@
+
 #countries{
     display: flex;
     gap: 100px 50px;
@@ -25,8 +26,30 @@ img{
     align-items: flex-start;
     justify-content: space-around;
 }
-.countriesfood{
+#countriesfood {
+    margin: 20px;
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
+#foodpic {
+    width: 50%;
+     /* height: 730px; */
+     margin: 20px;
+     border-radius: 60px;
+     
+ }
+ 
+ 
+ #display-item{
+     
+     display: flex;
+     
+ }
+ .half-item{
+     flex-grow: 1;
+ }
+ #inner-display{
+   float:left;
+ }
