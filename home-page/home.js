@@ -79,3 +79,35 @@ recipeDiv.style.display='none'
 }
 }
 button.addEventListener('click',searchForRecipes)
+
+recipeDiv.addEventListener('click', (e) => {
+    itemDisplay.style.display = 'flex';
+    innerDisplay.style.display = 'block';
+    recipeDiv.style.display = 'none';
+    let nameId = e.target.id
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${nameId}`)
+    .then(el=>el.json())
+    .then(el => {
+        // itemDisplay.style.display='inline'
+        foodpic.src = el.meals[0].strMealThumb
+        foodInstructions.innerText = el.meals[0].strInstructions
+      
+        //we reset the innerText for ingredients
+        ingredient.innerText = "";
+        ingredientTiltle.innerText = "Ingredients"
+
+        ingredient.append(ingredientTiltle)
+
+        //loop to set the foodingredients with the ingredients we fetched
+        for(let i = 1; i< 21; i++){
+            if(el.meals[0][`strIngredient${i}`]){
+                const foodingredients = document.createElement('dd')
+                foodingredients.innerText = el.meals[0][`strIngredient${i}`]
+                ingredient.appendChild(foodingredients)
+            }
+        }
+       
+
+    })
+
+})

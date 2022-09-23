@@ -46,7 +46,7 @@ const searchForRecipes = (event) =>{
             p.setAttribute('id',`${mealId}`)
             p.innerText = mealName
             countriesfood.append(div)
-            button.addEventListener('click',searchForRecipes)
+            
         
     }))
     button.addEventListener('click',searchForRecipes)
@@ -118,8 +118,10 @@ const countriesClickHandler = (event) => {
 
 
 countriesfood.addEventListener('click', (e) => {
-    
     let nameId = e.target.id
+    itemDisplay.style.display = 'flex';
+    innerDisplay.style.display = 'block';
+    countriesfood.style.display = 'none';
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${nameId}`)
     .then(el=>el.json())
     .then(el => {
