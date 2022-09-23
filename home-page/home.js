@@ -45,7 +45,7 @@ const recipeDiv = document.getElementById('recipes')
     }))
         
     
-    }else{fetch(`www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+    }else{fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
         .then(el=> el.json())
         .then(el => {
             console.log(name)
@@ -55,7 +55,7 @@ const recipeDiv = document.getElementById('recipes')
             
             //we reset the innerText for ingredients
             ingredient.innerText = "";
-                
+            ingredient.appendChild(ingredientTiltle)
             //loop to set the foodingredients with the ingredients we fetched
             for(let i = 1; i< 30; i++){
                 if(el.meals[0][`strIngredient${i}`]){

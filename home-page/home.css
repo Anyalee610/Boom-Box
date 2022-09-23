@@ -94,3 +94,14 @@ nav{
   flex-wrap: wrap;
   justify-content: space-around;
 }
+#display-item{
+     
+  display: flex;
+  
+}
+.half-item{
+  flex-grow: 1;
+}
+#inner-display{
+float:left;
+}
