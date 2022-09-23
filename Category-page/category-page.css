@@ -1,4 +1,5 @@
 
+
 #countries{
     display: flex;
     gap: 100px 50px;
@@ -34,22 +35,37 @@ img{
     justify-content: space-around;
 }
 #foodpic {
-    width: 50%;
-     /* height: 730px; */
-     margin: 20px;
-     border-radius: 60px;
+    width: 45vw;
+    height: 85vh;
+    
+    margin: 20px;
+    border-radius: 60px;
      
  }
- 
+
  
  #display-item{
      
      display: flex;
      
  }
+ #ingredient{
+    text-align: center;
+}
  .half-item{
      flex-grow: 1;
  }
  #inner-display{
    float:left;
  }
+ .half-item{
+    flex-grow: 1;
+    width: 50vw;
+    height: auto;
+    margin: 20px;
+    border-radius: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
