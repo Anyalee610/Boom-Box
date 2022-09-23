@@ -9,14 +9,18 @@ const oneRecipe = document.getElementById('one-recipe')
 const mealinfo = document.getElementsByClassName('nav-item meal-type')
 const homesearch = document.getElementById('home-search')
 const recipeDiv = document.getElementById('recipes')
-
+const itemDisplay = document.getElementById('display-item')
+const innerDisplay = document.getElementById('inner-display')
 //function for when the button is clicked on 
-
-
+itemDisplay.style.display = "none";
+recipeDiv.style.display='none'
  const searchForRecipes = (event) =>{
     event.preventDefault()
     let name = form.value;
     if (name.length === 1){
+        itemDisplay.style.display = "none";
+        recipeDiv.innerHTML = ''
+        recipeDiv.style.display = "flex";
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${name}`)
         .then(res=> res.json())
         .then(json => json.meals.forEach(meal => {
@@ -39,13 +43,17 @@ const recipeDiv = document.getElementById('recipes')
             img.setAttribute('id',`${mealId}`)
             p.setAttribute('id',`${mealId}`)
             p.innerText = mealName
-            
             recipeDiv.append(div)
+            
         
     }))
+    button.addEventListener('click',searchForRecipes)
         
     
-    }else{fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+    }else{
+        itemDisplay.style.display = "flex";
+        recipeDiv.style.display='none'
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
         .then(el=> el.json())
         .then(el => {
             console.log(name)
@@ -64,10 +72,10 @@ const recipeDiv = document.getElementById('recipes')
                     ingredient.appendChild(foodingredients)
                 }
             }
-            
+            button.addEventListener('click',searchForRecipes)
 
         })
-    
+        
 }
 }
 button.addEventListener('click',searchForRecipes)
