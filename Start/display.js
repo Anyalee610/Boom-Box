@@ -63,6 +63,7 @@ function display(displayName){
 }
 
 recipeDiv.addEventListener('click', (e) => {
+
     itemDisplay.style.display = 'flex';
     innerDisplay.style.display = 'block';
     recipeDiv.style.display = 'none';
@@ -77,7 +78,9 @@ recipeDiv.addEventListener('click', (e) => {
         //we reset the innerText for ingredients
         ingredient.innerText = "";
         ingredientTiltle.innerText = "Ingredients"
+
         ingredient.appendChild(ingredientTiltle)
+
         //loop to set the foodingredients with the ingredients we fetched
         for(let i = 1; i< 21; i++){
             if(el.meals[0][`strIngredient${i}`]){
@@ -94,4 +97,7 @@ recipeDiv.addEventListener('click', (e) => {
 
 
 
+
 display(mealName)
+
+
