@@ -83,6 +83,7 @@
     text-align:center;
     width: 50vw;
     background-color: #e9edc9;
+    padding: 10px;
 }
 nav{
     
@@ -126,4 +127,8 @@ float:left;
 }
 #ingredient{
   text-align: center;
+}
+#button{
+  margin: 20px;
+  padding: 10px;
 }

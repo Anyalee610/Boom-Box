@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="category-page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="display.css">
 </head>
 <body>
-    <nav id = 'nav' class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/home-page/home.html">ESCA</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,20 +22,21 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Category-page/category-page.html">Browse Country</a>
+                <a class="nav-link active" aria-current="page" href="../Category-page/category-page.html">Browse Country</a>
               </li>
                 <li class="nav-item meal-type">
-                <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Start/display.html#Breakfast">Breakfast</a>
+                <a class="nav-link active" aria-current="page" href="Start/display.html#Breakfast">Breakfast</a>
               </li>
               <li class="nav-item meal-type">
-                <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Start/display.html#Starter">Starter</a>
+                <a class="nav-link active" aria-current="page" href="Start/display.html#Starter">Starter</a>
               </li>
                 <li class="nav-item meal-type">
-                <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Start/display.html#Dessert">Dessert</a>
+                <a class="nav-link active" aria-current="page" href="Start/display.html#Dessert">Dessert</a>
               </li>
                 <li class="nav-item meal-type">
-                <a class="nav-link active" aria-current="page" href="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/Start/display.html#Vegan">Vegan</a>
+                <a class="nav-link active" aria-current="page" href="Start/display.html#Vegan">Vegan</a>
               </li>
+              
             </ul>
             <form  class="d-flex">
               <input id='search' class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -43,28 +45,24 @@
           </div>
       </div>
       </nav>
+
+    <div id="recipes"></div>
+
+    <div id ="display-item">
+        <div class="half-item">
+            <img id="foodpic">
+        </div>
         
-        <div id ="display-item">
-          <div class="half-item">
-              <img id="foodpic">
-          </div>
-          
-          <div id ="inner-display" class="half-item">
-              <dl id='ingredient'>
-                  <dt id ="ingredient-title"></dt>
-              </dl>
+        <div id ="inner-display" class="half-item">
+            <dl id='ingredient'>
+                <dt id ="ingredient-title"></dt>
+            </dl>
 
-              <p id="foodInstructions"></p>
-          </div>
-      </div>
-  <div id="countries">
-      
-  </div>
-  <div id="countriesfood">
-      
-</div>
+            <p id="foodInstructions"></p>
+        </div>
+    </div>
+    
 
-  <script src="category-page.js"></script>
+    <script src="display.js"></script>
 </body>
-
 </html>

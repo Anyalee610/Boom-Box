@@ -150,7 +150,7 @@ countriesfood.addEventListener('click', (e) => {
 
 
 
-const data = [{img:"ar", text: "Argentinian"},
+const data = [
 {img:"ca", text: "Canadian"},
 {img:"cn", text: "Chinese"},
 {img:"dz", text: "Algerian"},
@@ -174,9 +174,6 @@ const data = [{img:"ar", text: "Argentinian"},
 {img:"pl", text: "Polish"},
 {img:"pt", text: "Portuguese"},
 {img:"ru", text: "Russian"},
-{img:"sa", text: "Arabian"},
-{img:"sk", text: "Slovakian"},
-{img:"sy", text: "Syrian"},
 {img:"th", text: "Thai"},
 {img:"tn", text: "Tunisian"},
 {img:"tr", text: "Turkish"},
