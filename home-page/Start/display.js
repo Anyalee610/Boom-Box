@@ -14,7 +14,7 @@ const eachMealType3 = mealinfo[2]
 const eachMealType4 = mealinfo[3]
 let mealName = window.location.hash.slice(1)
 
-
+itemDisplay.style.display='none'
 const mealClickHandler = (e) => {
     e.preventDefault();
     recipeDiv.style.display = 'flex';
@@ -34,8 +34,7 @@ eachMealType4.addEventListener('click', mealClickHandler)
 
 function display(displayName){
     recipeDiv.style.display = 'flex';
-    
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${displayName}`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/filter.php?c=${displayName}`)
     .then(res=> res.json())
     .then(json => json.meals.forEach(meal => {
         let div = document.createElement('div');
@@ -69,7 +68,7 @@ const searchForRecipes = (event) =>{
     recipeDiv.innerHTML = ''
     let name = form.value;
     if (name.length === 1){
-        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${name}`)
+        fetch(`https://www.themealdb.com/api/json/v2/9973533/search.php?f=${name}`)
         .then(res=> res.json())
         .then(json => json.meals.forEach(meal => {
             recipeDiv.style.display = 'flex';
@@ -97,7 +96,7 @@ const searchForRecipes = (event) =>{
     }))
         
     
-    }else{fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+    }else{fetch(`https://www.themealdb.com/api/json/v2/9973533/search.php?s=${name}`)
         .then(el=> el.json())
         .then(el => {
             itemDisplay.style.display = 'flex';
@@ -134,7 +133,7 @@ recipeDiv.addEventListener('click', (e) => {
     innerDisplay.style.display = 'block';
     recipeDiv.style.display = 'none';
     let nameId = e.target.id
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${nameId}`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=${nameId}`)
     .then(el=>el.json())
     .then(el => {
         // itemDisplay.style.display='inline'

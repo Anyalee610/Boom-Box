@@ -23,7 +23,7 @@ const searchForRecipes = (event) =>{
         itemDisplay.style.display = "none";
         countriesfood.innerHTML = ''
         countriesfood.style.display = "flex";
-        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${name}`)
+        fetch(`https://www.themealdb.com/api/json/v2/9973533/search.php?f=${name}`)
         .then(res=> res.json())
         .then(json => json.meals.forEach(meal => {
             let div = document.createElement('div');
@@ -52,7 +52,7 @@ const searchForRecipes = (event) =>{
     button.addEventListener('click',searchForRecipes)
         
     
-    }else{fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
+    }else{fetch(`https://www.themealdb.com/api/json/v2/9973533/search.php?s=${name}`)
         .then(el=> el.json())
         .then(el => {
             itemDisplay.style.display = "flex";
@@ -87,7 +87,7 @@ const countriesClickHandler = (event) => {
     let countryName = event.target.textContent.trim();
     console.log(countryName)
     countries.style.display='none'
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${countryName}`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/filter.php?a=${countryName}`)
     .then(el=> el.json())
     .then(meal => meal.meals.forEach(meal => {
         let div = document.createElement('div');
@@ -122,7 +122,7 @@ countriesfood.addEventListener('click', (e) => {
     itemDisplay.style.display = 'flex';
     innerDisplay.style.display = 'block';
     countriesfood.style.display = 'none';
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${nameId}`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=${nameId}`)
     .then(el=>el.json())
     .then(el => {
         // itemDisplay.style.display='inline'
