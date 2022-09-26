@@ -187,7 +187,7 @@ for (let i = 0; i < arrayOfFlags.length; i++){
     newDiv.classList.add("pic-country");
     let imgData = data[i].img;
     let imgText = data[i].text;
-    let template = `<img  class = 'foodsimgs' src="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/image/${imgData}.png">
+    let template = `<img  class = 'foodsimgs' src="/Users/anaya-lambright/Development/unit-6/ESCA-FOODS/home-page/image/${imgData}.png">
     <p class = 'foodstext' >${imgText}</p>
     `;
     newDiv.innerHTML = template;
