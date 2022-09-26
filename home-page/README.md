@@ -4,7 +4,7 @@ Consumers are always looking for new recipes and inspiration for their cooking. 
 Team:  
 Product Manager/Developer: Anaya Lambright  
 Developer: Farouk Katakpaou  
-Developer: Delvin Reyes  
+
 
 Tech Stack:  
 Frontend: HTML, CSS, Javascript
